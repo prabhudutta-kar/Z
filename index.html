@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    
+    <!--Import materialize.css-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="./css/materialize.min.css"
+      media="screen,projection"
+    />
+    
+<!--    <link rel="stylesheet" href="./css/style.css">-->
+    <link rel="stylesheet" href="./css/main.css">
+
+    <title>Z Particles</title>
+</head>
+<body id="home" class="scrollspy">
+   
+   <header id="particles-js" >
+       <div class="primary-overlay">
+        <div class="navbar-fixed">
+          <nav class="transparent">
+            <div class="container">
+              <div class="nav-wrapper">
+                <a href="#home" class="brand-logo"><b>Z</b></a>
+                <a href="" data-activates="mobile-nav" class="button-collapse">
+                  <i class="material-icons">menu</i>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                  <li>
+                    <a href="#home">Home</a>
+                  </li>
+                  <li>
+                    <a href="#about">About Blog</a>
+                  </li>
+                  <li>
+                    <a href="#whyBlog">Why Blog</a>
+                  </li>
+                  <li>
+                    <a href="#contact">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <!-- Side nav -->
+        <ul class="side-nav" id="mobile-nav">
+          <h4 class="blue-grey darken-3 center">Z - The blog</h4>
+<!--
+          <li>
+            <a class="divider"></a>
+          </li>
+-->
+          <li>
+            <a href="#home">Home</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#testimonials">Testimonials</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+        <!-- Showcase -->
+        <div class="showcase container">
+          <div class="row">
+            <div class="col s12 m10 offset-m1 main-text center">
+              <h1 class="logo">Z</h1>
+              <p class="flow-text tagline">Every end has a new beginning.</p>
+              <br /><br />
+              <!-- Explore Button starts -->
+              <a href="exploreBlog.html" class="btn btn-large purple white-text"
+                >Explore Z</a
+              >
+              <!-- Explore Button ends -->
+              <a href="#about" class="white-text scrollspy">
+                <i class="material-icons medium scroll-icon"
+                  >arrow_drop_down_circle</i
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+   </header>
+   
+   <!-- Section: About -->
+    <section id="about" class="section section-about grey lighten-4 scrollspy">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m6">
+            <h3>
+              <span class="deep-purple-text text-darken-1">About</span> Blog
+            </h3>
+            <p class="flow-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quasi
+              laborum consectetur id consequatur repellat ipsum eum amet ullam
+              mollitia.
+            </p>
+          </div>
+          <div class="col s12 m6">
+            <img src="" alt="" class="circle responsive-img" />
+          </div>
+        </div>
+      </div>
+      <div class="social-btns">
+        <a class="btn facebook" href="#"><i class="fa fa-facebook"></i></a
+        ><a class="btn twitter" href="#"><i class="fa fa-twitter"></i></a
+        ><a class="btn google" href="#"><i class="fa fa-google"></i></a
+        ><a class="btn skype" href="#"><i class="fa fa-skype"></i></a>
+      </div>
+    </section>
+
+     <!--Import jQuery before materialize.js-->
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+    ></script>
+    <script src="js/materialize.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        //Init sidenav
+        $(".button-collapse").sideNav();
+
+        //Init scrollspy
+        $(".scrollspy").scrollSpy();
+
+        //scrollFire
+        const options = [
+          {
+            selector: ".main-text",
+            offset: 0,
+            callback: function(el) {
+              Materialize.fadeInImage($(el));
+            }
+          },
+          {
+            selector: ".navbar-fixed",
+            offset: 1000,
+            callback: function() {
+              $("nav").removeClass("transparent");
+              $("nav").addClass("transparent");
+            }
+          }
+        ];
+
+        Materialize.scrollFire(options);
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    
+    <script>
+        particlesJS.load('particles-js', './js/particles.json', function(){
+          console.log('particles.json loaded...');  
+        });
+    </script>
+</body>
+</html>
